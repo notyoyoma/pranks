@@ -1,7 +1,7 @@
-runprank=$[ $RANDOM % 10 ]
+: ${RUNPRANK:=$[ $RANDOM % 10 ]}
 
 
-case $runprank in
+case $RUNPRANK in
 1)
   export runningprank="ssh => starwars"
   starwars(){
@@ -33,6 +33,20 @@ case $runprank in
     echo "sudo: 3 incorrect password attempts"
   }
   alias sudo=sudoloop
+  ;;
+4)
+  export runningprank="exitlol"
+  exitlol(){
+    echo Are you sure?
+  }
+  alias exit=exitlol
+  ;;
+5)
+  export runningprank="gitlol"
+  gitlol(){
+    git --help $@
+  }
+  alias git=gitlol
   ;;
 ?)
   export runningprank="none"
