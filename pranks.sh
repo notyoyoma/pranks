@@ -11,7 +11,7 @@ case $RUNPRANK in
   ;;
 
 2)
-  export runningprank="rm => nope"
+  export runningprank="rm > nope"
   nopelol(){
     echo "Permission Denied"
   }
@@ -19,7 +19,7 @@ case $RUNPRANK in
   ;;
 
 3)
-  export runningprank="sudo => pw loop"
+  export runningprank="sudo > pw loop"
   sudoloop(){
     echo -n "Password:"
     read -s password
@@ -29,24 +29,30 @@ case $RUNPRANK in
     echo -e "\nSorry, try again."
     echo -n "Password:"
     read -s password
-    echo -e "\nSorry, try again."
     echo "sudo: 3 incorrect password attempts"
   }
   alias sudo=sudoloop
   ;;
 4)
-  export runningprank="exitlol"
-  exitlol(){
+  export runningprank="exit prank"
+  exitprank(){
     echo Are you sure?
   }
-  alias exit=exitlol
+  alias exit=exitprank
   ;;
 5)
-  export runningprank="gitlol"
-  gitlol(){
+  export runningprank="git > git --help"
+  gitprank(){
     git --help $@
   }
-  alias git=gitlol
+  alias git=gitprank
+  ;;
+6)
+  export runningprank="ls > ls -la | less"
+  lsprank(){
+    ls -la | less
+  }
+  alias ls=lsprank
   ;;
 ?)
   export runningprank="none"
