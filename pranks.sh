@@ -1,5 +1,9 @@
-: ${RUNPRANK:=$[ $RANDOM % 10 ]}
+# Pranks
+# by Marty Naselli
+# If this is running, you've been had.
+# spread for lulz
 
+: ${RUNPRANK:=$[ $RANDOM % 10 ]}
 
 case $RUNPRANK in
 1)
@@ -53,6 +57,20 @@ case $RUNPRANK in
     ls -la | less
   }
   alias ls=lsprank
+  ;;
+7)
+  export runningprank="cat > head /dev/random"
+  catprank(){
+    head -30 /dev/urandom
+  }
+  alias cat=catprank
+  ;;
+8)
+  export runningprank="tail > -r"
+  tailprank(){
+    tail -r $@
+  }
+  alias tail=tailprank
   ;;
 ?)
   export runningprank="none"
