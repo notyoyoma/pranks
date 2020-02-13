@@ -40,7 +40,17 @@ case $RUNPRANK in
 4)
   export runningprank="exit prank"
   exitprank(){
-    echo Are you sure?
+    echo "Are you sure?"
+    read -s next_command
+    echo "Are you really sure?"
+    read -s next_command
+    echo "Are you really really sure?"
+    read -s next_command
+    echo "Are you really really really sure?"
+    read -s next_command
+    echo "Are you really really really really sure?"
+    read -s next_command
+    echo "Nah"
   }
   alias exit=exitprank
   ;;
